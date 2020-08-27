@@ -5,18 +5,16 @@ import "fmt"
 func selection(nums []int) []int {
 	numLen := len(nums)
 
-	for i := 0; i < numLen; i++ {
+	for i := 0; i < numLen-1; i++ { //最后一个不用排序了
 
-		var min int //每次遍历的最小值
-		var k int   //每次最小值的位置index
+		var minIndex = i //每次最小值的位置index
 
-		for j := i; j < numLen; j++ {
-			if j == i || nums[j] < min {
-				min = nums[j]
-				k = j
+		for j := i + 1; j < numLen; j++ { // 从第二个开始排序，也就是i+1
+			if nums[j] < nums[minIndex] {
+				minIndex = j
 			}
 		}
-		nums[i], nums[k] = nums[k], nums[i]
+		nums[i], nums[minIndex] = nums[minIndex], nums[i]
 	}
 	return nums
 }
