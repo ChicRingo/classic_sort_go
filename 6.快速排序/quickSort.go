@@ -5,7 +5,8 @@ import (
 )
 
 func partition(nums []int, left, right int) int {
-	privot := left // 设基准值 privot 为left
+	// 设基准值 privot 为left
+	privot := left
 	index := privot + 1
 	for i := index; i <= right; i++ {
 		if nums[i] < nums[privot] {

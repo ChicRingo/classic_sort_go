@@ -5,8 +5,10 @@ import "fmt"
 func insertion(nums []int) []int {
 	// 网上写法
 	for i, tmp := range nums {
-		preIndex := i - 1 // 前一个索引值
-		//tmp := nums[i]    // 定义一个临时变量取当前的值（挖出来腾地方，给前面的往后挪位置的空间
+		// 前一个索引值
+		preIndex := i - 1
+		// 定义一个临时变量取当前的值（挖出来腾地方，给前面的往后挪位置的空间
+		//tmp := nums[i]
 		// 如果当前值 tmp 小于前面的值，就把前面的值往后挪，因为tmp已经保存过相当于空的
 		for preIndex >= 0 && tmp < nums[preIndex] {
 			nums[preIndex+1] = nums[preIndex]
